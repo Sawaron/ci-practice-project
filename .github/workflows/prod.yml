@@ -1,0 +1,18 @@
+name: Production Pipeline
+
+on:
+
+cat > .github/workflows/prod.yml << 'EOF'
+name: Production Pipeline
+
+on:
+  push:
+    branches: [ main, master ]
+
+jobs:
+  deploy-prod:
+    runs-on: ubuntu-latest
+    
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v3
